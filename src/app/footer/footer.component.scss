@@ -1,0 +1,62 @@
+/* General styles */
+.copyright-section {
+    height: auto; /* Adjust height based on content */
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: space-between; /* Space out items */
+    align-items: center;
+    background-color: black;
+    padding: 10px; /* Add padding for better spacing */
+   
+  }
+  
+  .seller, .advertise, .gift-cards, .help-center, .copyright-text, .bank-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px; /* Add margin between items */
+  }
+  
+  .copyright-section img {
+    height: 24px; /* Set a consistent height for images */
+    margin-right: 5px; /* Add space between image and text */
+  }
+  
+  .copyright-section span {
+    font-size: 0.8em;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 768px) {
+    .copyright-section {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      align-items: left; /* Center items horizontally */
+    }
+  
+    .seller, .advertise, .gift-cards, .help-center, .copyright-text, .bank-cards {
+      flex: 1 1 100%; /* Allow items to take full width on smaller screens */
+      text-align: left; /* Center text */
+      margin: 10px 0; /* Add vertical margin */
+    }
+  
+    .copyright-section img {
+      height: 20px; /* Adjust image size for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .copyright-section {
+      padding: 5px; /* Reduce padding on very small screens */
+    }
+  
+    .copyright-section img {
+      height: 18px; /* Further reduce image size */
+    }
+  
+    .copyright-section span {
+      font-size: 0.7em; /* Adjust font size for very small screens */
+    }
+  }

@@ -1,0 +1,85 @@
+<div class="container-fluid mt-5">
+  <div class="row mx-4">
+    <div class="col-md-3">
+      <h2 class="category-filters-section-title mx-2">Collections</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Left Side: Categories Navigation -->
+    <div class="col-md-3">
+      <div class="sticky-sidebar">
+        <div class="categories-navigation">
+          <div
+            class="categories-navigation-item"
+            [ngClass]="{'current-category': selectedCategory === 'ACCESSORIES'}"
+            (click)="selectCategory('ACCESSORIES')">
+            ACCESSORIES
+          </div>
+          <div
+            class="categories-navigation-item"
+            [ngClass]="{'current-category': selectedCategory === 'DECOR'}"
+            (click)="selectCategory('DECOR')">
+            DECOR
+          </div>
+          <div
+            class="categories-navigation-item"
+            [ngClass]="{'current-category': selectedCategory === 'LIFESTYLE'}"
+            (click)="selectCategory('LIFESTYLE')">
+            LIFESTYLE
+          </div>
+          <div
+            class="categories-navigation-item"
+            [ngClass]="{'current-category': selectedCategory === 'MOUNTS'}"
+            (click)="selectCategory('MOUNTS')">
+            MOUNTS
+          </div>
+          <div
+            class="categories-navigation-item"
+            [ngClass]="{'current-category': selectedCategory === 'POWER'}"
+            (click)="selectCategory('POWER')">
+            POWER
+          </div>
+          <div
+            class="categories-navigation-item"
+            [ngClass]="{'current-category': selectedCategory === 'SOUND'}"
+            (click)="selectCategory('SOUND')">
+            SOUND
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side: Product Slider -->
+    <div class="col-md-9">
+      <div class="container p-3">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 collection-products-wrapper" *ngFor="let product of filteredProducts">
+            <div class="product-thumb" (click)="addToCart(product)">
+              
+              <!-- <p *ngIf="product.soldOut" class="product-thumb-label-sold -limited">Sold out</p> -->
+              <div class="product-thumb-inner">
+                <div class="product-thumb-img-wrap">
+                  <img
+                    class="blur-up product-thumb-img lazyautosizes lazyloaded"
+                    [src]="product.imageUrl"
+                    [alt]="product.title"
+                  />
+                </div>
+              </div>
+              <div class="product-thumb-caption">
+                <h5 class="product-thumb-caption-title">{{ product.title }}</h5>
+                <ul class="product-thumb-caption-price">
+                  <li class="product-thumb-caption-price-current">
+                    <span class="money">${{ product.price }}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
