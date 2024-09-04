@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Product } from './shop/shop.component';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +12,23 @@ export class CartService {
   private wishlist: Set<number> = new Set();
   cart$ = this.cartSubject.asObservable();
 
-  constructor() {
+  constructor(private _http: HttpClient) {
     // Load wishlist from local storage if available
     const savedWishlist = localStorage.getItem('wishlist');
     if (savedWishlist) {
       this.wishlist = new Set(JSON.parse(savedWishlist));
     }
+  }
+
+  // Register User
+  signup(obj: any): Observable<any> {
+    return this._http.post<any>(`$/api/user/signup`, obj);
+    // return this._http.post<any>(`${environment._api}/api/user/signup`, obj);
+  }
+
+  // Login User
+  login(obj: any): Observable<any> {
+    return this._http.post<any>(`$/api/user/login`, obj);
   }
   addToCart(product: Product) {
     const existingProduct = this.cartItems.find(p => p.sku === product.sku);

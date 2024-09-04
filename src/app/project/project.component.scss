@@ -1,3 +1,4 @@
+/* General Page and Container */
 .general-page {
     max-width: none;
     color: #666565;
@@ -5,6 +6,12 @@
 }
 .contact-content, .general-page {
     max-width: none;
+}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 @media (min-width: 1200px) {
     .container {
@@ -18,77 +25,11 @@
 }
 @media (min-width: 768px) {
     .container {
-        width: 750px;
+     width: 70%;
     }
 }
-.container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
 
-div {
-    display: block;
-    unicode-bidi: isolate;
-}
-#shopify-section-contact-template #contact_form input, #shopify-section-contact-template #contact_form textarea {
-    border-radius: 6px;
-}
-.contact-content .contact-input, .contact-content .contact-textarea, .general-page .contact-input, .general-page .contact-textarea {
-    display: block;
-    padding: 10px 15px;
-    border: 1px solid #dddddd;
-    margin-bottom: 15px;
-    width: 100%;
-    -webkit-transition: .2s;
-    -moz-transition: .2s;
-    -o-transition: .2s;
-    -ms-transition: .2s;
-    transition: .2s;
-}
-body, input, textarea, button, select {
-    font-family: Lato, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-}
-.btn-primary:hover {
-    background: #e79059 !important;
-}
-.btn:hover {
-    -webkit-transition: .2s;
-    -moz-transition: .2s;
-    -o-transition: .2s;
-    -ms-transition: .2s;
-    transition: .2s;
-}
-.btn.focus, .btn:focus, .btn:hover {
-    color: #333;
-    text-decoration: none;
-}
-.btn {
-    padding: 12px 20px;
-    font-size: 14px;
-    border-radius: 45px;
-    line-height: 1em;
-    letter-spacing: 1px;
-    border: none;
-}
-.btn-primary {
-    color: #fff !important;
-    background: #d4651f;
-}
-.about-content {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
+/* Contact Form Styles */
 .contact-form {
     max-width: 100%;
     padding: 15px;
@@ -111,9 +52,55 @@ body, input, textarea, button, select {
     outline: none;
 }
 
+/* Button Styles */
+.btn-primary {
+    color: #fff !important;
+    background: #d4651f;
+}
+.btn-primary:hover {
+    background: #e79059 !important;
+}
+.btn {
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 45px;
+    line-height: 1em;
+    letter-spacing: 1px;
+    border: none;
+}
+.btn:hover {
+    transition: .2s;
+    color: #333;
+    text-decoration: none;
+}
 
+/* About Content */
+.about-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Labels */
 .fields_label {
     font-weight: bold;
     margin-bottom: 5px;
     display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .about-content {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .contact-form {
+        padding: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px;
+    }
 }
